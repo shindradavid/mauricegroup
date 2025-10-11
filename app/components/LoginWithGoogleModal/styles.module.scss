@@ -1,0 +1,24 @@
+.heading {
+  text-align: center;
+  margin: 0;
+}
+
+.signupText {
+  text-align: center;
+  margin: 0;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: var(--spacing-md);
+  background-color: var(--clr-accent-2);
+  color: var(--clr-txt-primary-on-bg-accent-2);
+  font-weight: var(--fw-bold);
+}
+
+.cancelButton {
+  width: 100%;
+  background-color: var(--clr-bg-primary);
+  border: 1px solid #000000;
+  font-weight: var(--fw-bold);
+}

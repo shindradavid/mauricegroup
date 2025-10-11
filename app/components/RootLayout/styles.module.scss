@@ -1,0 +1,88 @@
+@use '../../styles/utils';
+
+.rootLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: utils.z('topBar');
+}
+
+.header {
+  height: var(--header-height);
+  background-color: var(--clr-bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+
+  @include utils.add-section-lr-padding();
+}
+
+.headerLoginBtn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid currentColor;
+  border-radius: var(--radius-xs);
+}
+
+.headerUserPhoto {
+  border-radius: 50%;
+}
+
+.headerUserPhotoButton {
+  width: fit-content;
+}
+
+.headerTitle {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: currentColor;
+}
+
+.headerShareBtn {
+  padding: var(--spacing-sm);
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  gap: var(--spacing-sm);
+  border-bottom: 1px solid var(--clr-bg-tertiary);
+  background-color: var(--clr-bg-primary);
+
+  @include utils.add-section-lr-padding();
+}
+
+.navLink {
+  text-decoration: none;
+  font-weight: 600;
+  background-color: var(--clr-bg-accent-1);
+  color: var(--clr-txt-primary-on-bg-accent-1);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-xs);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.main {
+  margin-top: calc(var(--header-height) * 2);
+  flex-grow: 1;
+  background-color: var(--clr-bg-primary);
+  color: var(--clr-txt-secondary-on-bg-primary);
+}

@@ -1,0 +1,117 @@
+@use '../../styles/utils' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: z('fullscreen');
+  display: flex;
+  justify-content: flex-start;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.drawer {
+  width: 280px;
+  height: 100%;
+  background-color: var(--clr-bg-primary);
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: slideIn 0.3s ease-in-out;
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+.closeIcon {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  cursor: pointer;
+  color: var(--clr-txt-secondary-on-bg-primary);
+}
+
+.header {
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--clr-border-secondary-on-bg-primary);
+
+  .userInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--clr-border-secondary-on-bg-primary);
+    }
+
+    strong {
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semibold);
+    }
+
+    p {
+      font-size: var(--fs-sm);
+      color: var(--clr-txt-secondary-on-bg-primary);
+      margin: 0;
+    }
+  }
+
+  .guestText {
+    font-size: var(--fs-base);
+    color: var(--clr-txt-secondary-on-bg-primary);
+    font-style: italic;
+  }
+}
+
+.nav {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 0.8rem 0;
+
+      a {
+        display: block;
+        color: var(--clr-txt-primary-on-bg-primary);
+        text-decoration: none;
+        font-size: var(--fs-base);
+        padding: 0.6rem 0;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+
+        &:hover {
+          color: var(--clr-accent-1);
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        &.active {
+          font-weight: var(--fw-semibold);
+          color: var(--clr-accent-1);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}

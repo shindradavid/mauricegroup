@@ -1,0 +1,161 @@
+@use '../../styles/utils' as *;
+
+.page {
+  background-color: var(--clr-bg-secondary);
+  min-height: 100vh;
+  padding: var(--spacing-md) var(--section-padding);
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--clr-txt-primary-on-bg-primary);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+  width: 200px;
+  flex-shrink: 0;
+  text-align: center;
+
+  img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .customerInfo {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+
+    strong {
+      display: block;
+    }
+
+    span {
+      color: #666;
+    }
+  }
+
+  .statusBadge {
+    display: inline-block;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    margin-top: 0.4rem;
+  }
+
+  .sourceTag {
+    font-size: var(--fs-xs);
+    color: #999;
+    margin-top: 0.5rem;
+  }
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    font-size: var(--fs-sm);
+    margin-bottom: 0.5rem;
+
+    strong {
+      font-weight: 600;
+      margin-right: 6px;
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.requestBox {
+  margin-top: 1.2rem;
+}
+
+.requestBtn {
+  padding: 0.5rem 1.2rem;
+  background-color: #388e3c;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: #2e7d32;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.commissionBox {
+  margin-top: 2rem;
+  background-color: #fefefe;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #4caf50;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .commissionItem {
+    margin-bottom: 1rem;
+    p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+    }
+  }
+
+  .status {
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .approved {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+  }
+
+  .pending {
+    background-color: #fff9c4;
+    color: #f9a825;
+  }
+
+  .denied {
+    background-color: #ffcdd2;
+    color: #c62828;
+  }
+}

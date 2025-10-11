@@ -1,10 +1,12 @@
-import "react-router";
-import { createRequestHandler } from "@react-router/express";
-import express from "express";
+import 'react-router';
+import { createRequestHandler } from '@react-router/express';
+import express from 'express';
 
-declare module "react-router" {
+import { getTenantByHostHeader, type Tenant } from '~/utils/tenantManager';
+
+declare module 'react-router' {
   interface AppLoadContext {
-    VALUE_FROM_EXPRESS: string;
+    tenant: Tenant;
   }
 }
 
@@ -12,11 +14,12 @@ export const app = express();
 
 app.use(
   createRequestHandler({
-    build: () => import("virtual:react-router/server-build"),
-    getLoadContext() {
-      return {
-        VALUE_FROM_EXPRESS: "Hello from Express",
-      };
+    build: () => import('virtual:react-router/server-build'),
+    getLoadContext(req) {
+      const host = req.headers['x-forwarded-host'] || req.headers['host'];
+      const tenant = getTenantByHostHeader(host as string);
+
+      return { tenant };
     },
   }),
 );

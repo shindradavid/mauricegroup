@@ -1,0 +1,102 @@
+@use '../../styles/utils';
+
+.sectionHeader {
+  text-align: center;
+}
+
+.sectionHeaderTitle {
+  font-weight: var(--fw-bold);
+  margin: var(--spacing-xs) 0 0 0;
+  text-align: center;
+}
+
+.cakeListContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  @include utils.add-section-lr-padding();
+}
+
+.card {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.details {
+  padding: 8px;
+  text-align: center;
+}
+
+.name {
+  font-size: var(--fs-base);
+  font-weight: bold;
+  margin: 0;
+}
+
+.price {
+  font-size: var(--fs-sm);
+  color: #555;
+  font-weight: var(--fw-semibold);
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.centered {
+  text-align: center;
+  padding: 32px 16px;
+}
+
+.loader {
+  width: 32px;
+  height: 32px;
+  border: 4px solid #ccc;
+  border-top-color: #ff6b81;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.eventPhotoLogo {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.8;
+  pointer-events: none;
+
+  @include utils.respond-to('md-screens') {
+    width: 96px;
+    height: 96px;
+  }
+}

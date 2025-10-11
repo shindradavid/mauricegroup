@@ -1,0 +1,41 @@
+.cakeCategoryLink {
+  text-decoration: none;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: var(--shadow-md);
+  border-radius: 16px;
+  width: 180px;
+  height: 200px;
+}
+
+.cakeCategoryCard {
+  border-radius: 16px;
+  position: relative;
+  width: 180px;
+  height: 200px;
+}
+
+.cakeCategoryImage {
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.cakeCategoryName {
+  position: absolute;
+  margin: 0px;
+  bottom: 0;
+  color: #000000;
+  background-color: #ffffff80;
+  backdrop-filter: blur(2px);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  width: 100%;
+  padding: var(--spacing-xs);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}

@@ -1,0 +1,126 @@
+.container {
+  padding: 16px;
+  background-color: #f8f8f8;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  min-height: 300px;
+  text-align: center;
+}
+
+.loader {
+  width: 32px;
+  height: 32px;
+  border: 4px solid #eee;
+  border-top-color: #5c67f2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-size: 16px;
+  color: #555;
+}
+
+.errorText {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e53935;
+  margin-bottom: 8px;
+}
+
+.errorSubText {
+  color: #777;
+}
+
+.filterContainer {
+  display: flex;
+  overflow-x: auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: var(--section-padding);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.filterButton {
+  padding: 6px 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: border-color 0.2s;
+}
+
+.selectedFilterButton {
+  border-color: #5c67f2;
+  border-width: 2px;
+}
+
+.heading {
+  font-size: var(--fs-md);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  padding: 0 16px 16px;
+}
+
+.itemContainer {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 12px;
+  color: #777;
+}
+
+.empty {
+  padding: 16px;
+  text-align: center;
+  color: #999;
+}

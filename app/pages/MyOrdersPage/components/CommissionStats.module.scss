@@ -1,0 +1,48 @@
+.statsCard {
+  background: #f9f9f9;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  max-width: 500px;
+  border: 1px solid #eee;
+  margin-bottom: var(--spacing-sm);
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  font-size: 1rem;
+  border-top: 1px solid #eee;
+
+  &:first-of-type {
+    border-top: none;
+  }
+
+  label {
+    color: #666;
+    font-weight: 500;
+  }
+
+  span {
+    font-weight: 600;
+    color: #2e7d32;
+  }
+}
+
+.loading {
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  color: #d32f2f;
+  font-weight: 600;
+}

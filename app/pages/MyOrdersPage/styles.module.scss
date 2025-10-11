@@ -1,0 +1,19 @@
+.myOrdersPage {
+  background-color: var(--clr-bg-secondary);
+  min-height: 100vh;
+  padding: var(--spacing-md) var(--section-padding);
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--clr-txt-primary-on-bg-primary);
+  }
+}
+
+.orderList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

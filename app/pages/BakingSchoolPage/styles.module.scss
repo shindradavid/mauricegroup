@@ -1,0 +1,28 @@
+.section {
+  background-color: #fbeab7;
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  padding-left: var(--section-padding);
+  padding-right: var(--section-padding);
+}
+
+.sectionHeader {
+  text-align: center;
+}
+
+.sectionHeaderTitle {
+  font-weight: var(--fw-bold);
+  margin: var(--spacing-xs) 0 0 0;
+}
+
+.sectionHeaderSubtitle {
+  font-size: var(--fs-sm);
+}
+
+.list {
+  margin-bottom: var(--spacing-md);
+}
+
+.listItem {
+  font-size: var(--fs-sm);
+}

@@ -1,0 +1,77 @@
+@use '../../../styles/utils';
+
+.section {
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  padding-left: var(--section-padding);
+}
+
+.sectionHeader {
+  text-align: center;
+}
+
+.sectionHeaderTitle {
+  font-weight: var(--fw-bold);
+  margin: var(--spacing-xs) 0 0 0;
+}
+
+.sectionHeaderSubtitle {
+  font-size: var(--fs-sm);
+}
+
+.cakeCategoriesContainer {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+
+  @include utils.respond-to('lg-screens') {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.cakeCategoryLink {
+  text-decoration: none;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: var(--shadow-md);
+  border-radius: 16px;
+  width: 140px;
+  height: 160px;
+}
+
+.cakeCategoryCard {
+  border-radius: 16px;
+  position: relative;
+  width: 140px;
+  height: 160px;
+}
+
+.cakeCategoryImage {
+  border-radius: 16px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.cakeCategoryName {
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  color: #000000;
+  background-color: #ffffff80;
+  backdrop-filter: blur(2px);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+  width: 100%;
+  padding: var(--spacing-xs);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}

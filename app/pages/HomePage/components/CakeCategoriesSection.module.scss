@@ -1,0 +1,27 @@
+.section {
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  padding-left: var(--section-padding);
+}
+
+.sectionHeader {
+  text-align: center;
+}
+
+.sectionHeaderTitle {
+  font-weight: var(--fw-bold);
+  margin: var(--spacing-xs) 0 0 0;
+}
+
+.sectionHeaderSubtitle {
+  font-size: var(--fs-sm);
+}
+
+.cakeCategoriesContainer {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+}

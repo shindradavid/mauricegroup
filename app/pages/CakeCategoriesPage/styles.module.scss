@@ -1,0 +1,112 @@
+.main {
+  margin-top: var(--header-height);
+  padding-bottom: var(--spacing-xl);
+  padding-left: var(--section-padding);
+  padding-right: var(--section-padding);
+}
+
+.loadingMessage,
+.errorMessage,
+.noCategoriesMessage {
+  text-align: center;
+  padding: var(--spacing-md);
+  font-size: var(--fs-base);
+  color: #555;
+}
+
+.errorMessage {
+  color: #cc0000;
+  font-weight: var(--fw-bold);
+}
+
+.cakeCategories {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+
+  &__heading {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-bold);
+    margin-bottom: var(--spacing-md);
+    color: #3e2c2c; /* Deep brown, similar to your baking school theme */
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Responsive grid */
+    gap: var(--spacing-sm);
+    justify-content: center; /* Center grid items */
+    max-width: 1200px; /* Max width for the grid */
+    margin: 0 auto; /* Center the grid container */
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--spacing-md);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--spacing-lg);
+    }
+  }
+
+  .cakeCategoryLink {
+    text-decoration: none; // Remove underline from link
+    display: block; // Make the link fill the grid item
+    height: 100%; // Ensure link takes full height of card
+  }
+
+  .cakeCategoryCard {
+    background-color: #ffffff;
+    border-radius: var(--radius-md); /* Use 16px radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative; /* For absolute positioning of name overlay */
+    overflow: hidden; /* Ensure image and name are clipped to card radius */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    padding-bottom: 133.33%; /* Creates a 3:4 aspect ratio (width:height), making it longer */
+    height: 0; /* Important for padding-bottom trick */
+    width: 100%; /* Fill grid cell */
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .imageWrapper {
+      position: absolute; /* Fill the card */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: inherit; /* Inherit from parent card */
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+      }
+    }
+
+    .categoryName {
+      position: absolute;
+      margin: 0; /* Remove margin */
+      bottom: 0;
+      color: #000000;
+      background-color: rgba(255, 255, 255, 0.5); /* #ffffff80 */
+      backdrop-filter: blur(2px);
+      text-align: center;
+      font-size: var(--fs-xs); /* 12px */
+      font-weight: var(--fw-bold); /* 700 */
+      text-transform: capitalize;
+      width: 100%;
+      padding: var(--spacing-xs); /* 8px */
+      border-bottom-left-radius: var(--radius-md); /* Apply radius only to bottom corners */
+      border-bottom-right-radius: var(--radius-md);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

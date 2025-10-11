@@ -1,0 +1,84 @@
+@use 'sass:color';
+@use '../utils' as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z('fullscreen');
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  @include respond-to('md-screens') {
+    padding: 4rem;
+  }
+}
+
+.modal-content {
+  background-color: var(--clr-bg-primary);
+  color: var(--clr-txt-primary-on-bg-primary);
+  border-radius: 1.2rem;
+  padding: 2.4rem;
+  width: 100%;
+  max-width: 48rem;
+  box-shadow: 0 2px 20px var(--clr-shadow);
+  position: relative;
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  h2 {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    font-family: var(--ff-headings);
+    margin-bottom: 1rem;
+  }
+
+  input[type='tel'] {
+    padding: 1.2rem;
+    font-size: var(--fs-base);
+    border: 1px solid var(--clr-border-secondary-on-bg-bg-primary);
+    border-radius: 0.8rem;
+    font-family: var(--ff-body);
+    color: var(--clr-txt-primary-on-bg-primary);
+    background-color: var(--clr-bg-primary);
+
+    &:focus {
+      border-color: var(--clr-accent-1);
+      outline: none;
+    }
+  }
+
+  button {
+    padding: 1.2rem 1.6rem;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-family: var(--ff-body);
+    transition: background-color 0.2s ease;
+
+    // &:first-of-type {
+    //   background-color: var(--clr-accent-2);
+    //   color: var(--clr-txt-primary-on-bg-accent-2);
+    // }
+
+    // &:last-of-type {
+    //   background-color: transparent;
+    //   border: 1px solid var(--clr-border-secondary-on-bg-bg-primary);
+    //   color: var(--clr-txt-secondary-on-bg-primary);
+
+    //   &:hover {
+    //     background-color: var(--clr-bg-secondary);
+    //   }
+    // }
+  }
+}
